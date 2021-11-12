@@ -23,5 +23,7 @@
 		<value>123</value>
 		<value>529</value>
 	</util:list>
+	
+	<bean class="com.springcore.annotations.stereoTypes.ABC" name="abc" scope="prototype"/>
 
 </beans>
