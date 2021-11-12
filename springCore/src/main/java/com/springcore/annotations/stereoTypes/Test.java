@@ -10,6 +10,7 @@ public class Test {
 		//standalone return same object
 		Stanalone obj = c.getBean("obj",Stanalone.class);
 		System.out.println(obj.hashCode());
+		System.out.println(obj);
 		Stanalone obj1 = c.getBean("obj",Stanalone.class);
 		System.out.println(obj1.hashCode());
 
