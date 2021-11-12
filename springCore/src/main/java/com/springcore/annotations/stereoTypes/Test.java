@@ -8,7 +8,10 @@ public class Test {
 	public static void main(String[] args) {
 		ApplicationContext c = new ClassPathXmlApplicationContext("com/springcore/annotations/stereoTypes/config.xml");
 		Stanalone obj = c.getBean("obj",Stanalone.class);
-		System.out.println(obj);
+		System.out.println(obj.hashCode());
+		
+		Stanalone obj1 = c.getBean("obj",Stanalone.class);
+		System.out.println(obj1.hashCode());
 	}
 
 }
