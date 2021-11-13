@@ -23,6 +23,9 @@ public class Stanalone {
 
 	@Value("#{listCollection}")
 	private List<Integer> list;
+	
+	@Value("#{5<7}")
+	private boolean bool;
 
 	public String getName() {
 		return name;
@@ -72,7 +75,9 @@ public class Stanalone {
 	public String toString() {
 		final int maxLen = 10;
 		return "Stanalone [z=" + z + ", pi=" + pi + ", obj=" + obj + ", name=" + name + ", list="
-				+ (list != null ? list.subList(0, Math.min(list.size(), maxLen)) : null) + "]";
+				+ (list != null ? list.subList(0, Math.min(list.size(), maxLen)) : null) + ", bool=" + bool + "]";
 	}
+
+	
 
 }
