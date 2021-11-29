@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.java.spring</groupId>
-	<artifactId>SpringJdbcTemplate</artifactId>
+	<artifactId>SpringJDBC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -43,4 +43,4 @@
 			<version>5.1.35</version>
 		</dependency>
 	</dependencies>
-</project>
+</project> 
