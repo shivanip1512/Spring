@@ -24,4 +24,9 @@
 		class="org.springframework.jdbc.core.JdbcTemplate"
 		p:dataSource-ref="ds" />
 
+	<bean name="studentDao"
+		class="com.java.spring.jdbcTemplate.dao.StudentDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
 </beans>

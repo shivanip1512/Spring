@@ -1,4 +1,4 @@
-package com.java.spring.jdbcTemplate;
+package com.java.spring.jdbcTemplate.entity;
 
 public class Student {
 	
