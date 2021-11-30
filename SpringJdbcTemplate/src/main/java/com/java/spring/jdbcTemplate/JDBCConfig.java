@@ -3,14 +3,13 @@ package com.java.spring.jdbcTemplate;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import com.java.spring.jdbcTemplate.dao.StudentDao;
-import com.java.spring.jdbcTemplate.dao.StudentDaoImpl;
-
 @Configuration
+@ComponentScan(basePackages = {"com.java.spring.jdbcTemplate.dao"})
 public class JDBCConfig {
 
 	@Bean("ds")
@@ -30,12 +29,11 @@ public class JDBCConfig {
 		return jdbcTemplate;
 	}
 	
-	@Bean("studentDAO")
-	public StudentDao setJDBCTemplate() {
-		StudentDaoImpl daoImpl = new StudentDaoImpl();
-		daoImpl.setJdbcTemplate(getJDBCTemplate());
-		return daoImpl;
-	}
+	/*
+	 * @Bean("studentDAO") public StudentDao setJDBCTemplate() { StudentDaoImpl
+	 * daoImpl = new StudentDaoImpl(); daoImpl.setJdbcTemplate(getJDBCTemplate());
+	 * return daoImpl; }
+	 */
 	
 	
 }
