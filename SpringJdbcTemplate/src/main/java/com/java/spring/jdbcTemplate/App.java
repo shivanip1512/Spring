@@ -1,10 +1,9 @@
 package com.java.spring.jdbcTemplate;
 
-import java.util.Iterator;
 import java.util.List;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import com.java.spring.jdbcTemplate.dao.StudentDao;
 import com.java.spring.jdbcTemplate.entity.Student;
@@ -15,9 +14,12 @@ import com.java.spring.jdbcTemplate.entity.Student;
  */
 public class App {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("com/java/spring/jdbcTemplate/config.xml");
-		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com/java/spring/jdbcTemplate/config.xml");
+//		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(JDBCConfig.class);
+		StudentDao studentDao = context.getBean("studentDAO",StudentDao.class);
+		
 		Student st = new Student();
 		st.setId(4);
 		st.setName("abc");
