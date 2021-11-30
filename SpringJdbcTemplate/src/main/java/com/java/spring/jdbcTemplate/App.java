@@ -38,6 +38,7 @@ public class App {
 		 * System.out.println(delete+" rows deleted...");
 		 */
 		
-		
+		Student student = studentDao.getStudent(1);
+		System.out.println(student);
 	}
 }
