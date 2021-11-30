@@ -20,7 +20,24 @@ public class App {
 		st.setName("abc");
 		st.setAddress("india");
 		
-		int insertRes = studentDao.insert(st);
-		System.out.println(insertRes+ " student added...");
+		/*
+		 * int insertRes = studentDao.insert(st); System.out.println(insertRes+
+		 * " student added...");
+		 */		
+		
+		/*
+		 * Student s2 = new Student(); s2.setId(1); s2.setName("Shivani Pacharne");
+		 * s2.setAddress("Pune");
+		 * 
+		 * int update = studentDao.change(s2);
+		 * System.out.println(update+" student updated...");
+		 */
+		
+		/*
+		 * int delete = studentDao.delete(2);
+		 * System.out.println(delete+" rows deleted...");
+		 */
+		
+		
 	}
 }

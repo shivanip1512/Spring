@@ -22,4 +22,16 @@ public class StudentDaoImpl implements StudentDao {
 		return res;
 	}
 
+	public int change(Student s) {
+		String uq = "update student set name=?, address=? where id=?";
+		int res = this.jdbcTemplate.update(uq, s.getName(), s.getAddress(), s.getId());
+		return res;
+	}
+
+	public int delete(int id) {
+		String dq = "delete from student where id=?";
+		int res = this.jdbcTemplate.update(dq, id);
+		return res;
+	}
+
 }
