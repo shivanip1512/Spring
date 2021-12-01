@@ -7,21 +7,63 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-class User {
-	
+public class User {
+
 	@Id
 	@Column(name = "id")
 	private int userID;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "username")
 	private String userName;
-	
+
 	@Column(name = "pin")
 	private int pin;
-	
-	
+
+	public User(int userID, String name, String userName, int pin) {
+		super();
+		this.userID = userID;
+		this.name = name;
+		this.userName = userName;
+		this.pin = pin;
+	}
+
+	public User() {
+		super();
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public int getPin() {
+		return pin;
+	}
+
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
 
 }
