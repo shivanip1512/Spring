@@ -1,5 +1,7 @@
 package com.java.spring.orm.springORM.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -22,6 +24,27 @@ public class UserDaoImpl implements UserDao {
 	public int addUser(User user) {
 		Integer save = (Integer) this.hibernateTemplate.save(user);
 		return save;
+	}
+
+	public User getUser(int id) {
+		User user = this.hibernateTemplate.get(User.class, id);
+		return user;
+	}
+
+	public List<User> getAllUsers() {
+		List<User> users = this.hibernateTemplate.loadAll(User.class);
+		return users;
+	}
+
+	@Transactional
+	public void deleteUser(int id) {
+		User user = this.getUser(id);
+		this.hibernateTemplate.delete(user);
+	}
+
+	@Transactional
+	public void updateUser(User user) {
+		this.hibernateTemplate.update(user);
 	}
 
 }

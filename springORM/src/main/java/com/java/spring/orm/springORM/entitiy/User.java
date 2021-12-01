@@ -22,6 +22,11 @@ public class User {
 	@Column(name = "pin")
 	private int pin;
 
+	@Override
+	public String toString() {
+		return "User [userID=" + userID + ", name=" + name + ", userName=" + userName + ", pin=" + pin + "]";
+	}
+
 	public User(int userID, String name, String userName, int pin) {
 		super();
 		this.userID = userID;
