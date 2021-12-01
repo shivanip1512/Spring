@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 		return save;
 	}
 
-	public User getUser(int id) {
+	public User getUserbyID(int id) {
 		User user = this.hibernateTemplate.get(User.class, id);
 		return user;
 	}
@@ -38,13 +38,17 @@ public class UserDaoImpl implements UserDao {
 
 	@Transactional
 	public void deleteUser(int id) {
-		User user = this.getUser(id);
+		User user = this.getUserbyID(id);
 		this.hibernateTemplate.delete(user);
 	}
 
 	@Transactional
 	public void updateUser(User user) {
 		this.hibernateTemplate.update(user);
+	}
+
+	public User getUserByUName(String uname) {
+		return this.hibernateTemplate.get(User.class, uname);
 	}
 
 }

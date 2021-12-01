@@ -24,12 +24,19 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", name=" + name + ", userName=" + userName + ", pin=" + pin + "]";
+		return "\nUser [userID=" + userID + ", name=" + name + ", userName=" + userName + ", pin=" + pin + "]";
 	}
 
 	public User(int userID, String name, String userName, int pin) {
 		super();
 		this.userID = userID;
+		this.name = name;
+		this.userName = userName;
+		this.pin = pin;
+	}
+
+	public User(String name, String userName, int pin) {
+		super();
 		this.name = name;
 		this.userName = userName;
 		this.pin = pin;
