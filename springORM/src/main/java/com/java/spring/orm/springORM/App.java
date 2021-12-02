@@ -98,8 +98,8 @@ public class App {
 				System.out.println(e.getMessage());
 			}
 			
-			System.out.println("\n\n\tThank you for using my application!!");
 		}
+		System.out.println("\n\n\tThank you for using my application!!");
 
 		// insert a user
 		/*

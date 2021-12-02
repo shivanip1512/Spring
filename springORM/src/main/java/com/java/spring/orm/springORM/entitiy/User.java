@@ -24,7 +24,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "\nUser [userID=" + userID + ", name=" + name + ", userName=" + userName + ", pin=" + pin + "]";
+		return "\nuserID=" + userID + "\nname=" + name + "\nuserName=" + userName + "\npin=" + pin+"\n-----------------------------";
 	}
 
 	public User(int userID, String name, String userName, int pin) {
