@@ -19,7 +19,8 @@ public class App {
 		UserDao dao = context.getBean("userDao", UserDao.class);
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		while (true) {
+		boolean loop = true;
+		while (loop) {
 			System.out.println("\n\nPRESS OPTIONS BELOW TO PERFORM RESPECTIVE OPERATIONS :" + "\n\t1 : CREATE NEW USER"
 					+ "\n\t2 : DISPLAY USER" + "\n\t3 : DISPLAY ALL USERs" + "\n\t4 : UPDATE USER"
 					+ "\n\t5 : DELETE USER" + "\n\t6 : EXIT");
@@ -86,14 +87,18 @@ public class App {
 					break;
 
 				case 6:
-					System.exit(0);
+					loop = false;
+					break;
 
 				default:
 					break;
 				}
 			} catch (Exception e) {
 				System.out.println("Please enter valid input!");
+				System.out.println(e.getMessage());
 			}
+			
+			System.out.println("\n\n\tThank you for using my application!!");
 		}
 
 		// insert a user
