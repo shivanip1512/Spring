@@ -1,5 +1,6 @@
 package springMVC.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,9 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import springMVC.model.User;
+import springMVC.service.UserService;
 
 @Controller
 public class ContactController {
+	
+	@Autowired
+	private UserService userService;
 	
 	@ModelAttribute
 	private void setHeader(Model m) {
@@ -42,6 +47,7 @@ public class ContactController {
 			@ModelAttribute User user,
 			Model model
 			) {
+		this.userService.createUser(user);
 		return "userDetails";
 		}
 }
