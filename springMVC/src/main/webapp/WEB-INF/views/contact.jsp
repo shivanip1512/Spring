@@ -1,10 +1,9 @@
+<%@page isELIgnored="false" %>
+
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -17,6 +16,8 @@
 <body>
 
 	<div class="container mt-5">
+	<h1 class="text-center">${header_ }</h1>
+	<h5 class="text-center">${desc }</h5>
 	<h2 class="text-center"><b>Registration form</b></h2>
 	<form action="processFormUsingMA" method="post">
 	

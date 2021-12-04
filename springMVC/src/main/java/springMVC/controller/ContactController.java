@@ -11,6 +11,12 @@ import springMVC.model.User;
 
 @Controller
 public class ContactController {
+	
+	@ModelAttribute
+	private void setHeader(Model m) {
+		m.addAttribute("header_","Learn Spring MVC");
+		m.addAttribute("desc","Home for Programmer");
+	}
 
 	@RequestMapping("/contact")
 	public String showForm() {
