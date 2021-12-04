@@ -1,5 +1,8 @@
 package springMVC.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,11 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView();
 		//set the data
 		modelAndView.addObject("name","Shivani Pacharne");
+		List<Integer> marks = new ArrayList<Integer>();
+		marks.add(1234);
+		marks.add(5678);
+		marks.add(4125);
+		modelAndView.addObject("marks",marks);
 		//set view name
 		modelAndView.setViewName("help");
 		return modelAndView;
