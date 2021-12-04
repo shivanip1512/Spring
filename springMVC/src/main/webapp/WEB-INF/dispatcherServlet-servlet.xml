@@ -9,8 +9,12 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan
+		base-package="springMVC.controller" />
+
+	<!-- /WEB-INF/views/about.jsp -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		name="viewResolver" p:prefix="/WEB_INF/views/" p:suffix=".jsp" />
+		name="viewResolver" p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
 
 </beans>
