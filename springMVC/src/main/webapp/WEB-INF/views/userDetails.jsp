@@ -8,6 +8,6 @@
 <title>User Details</title>
 </head>
 <body>
-	<h2>Hi ${name }! <br> Please verify your email : ${email }</h2>
+	<h2>Hi ${user.userName }! <br> Please verify your email : ${user.email }</h2>
 </body>
 </html>

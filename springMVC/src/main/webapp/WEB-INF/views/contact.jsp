@@ -18,7 +18,7 @@
 
 	<div class="container mt-5">
 	<h2 class="text-center"><b>Registration form</b></h2>
-	<form action="processForm" method="post">
+	<form action="processFormUsingMA" method="post">
 	
 		<div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
