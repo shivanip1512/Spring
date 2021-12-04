@@ -47,6 +47,9 @@ public class ContactController {
 			@ModelAttribute User user,
 			Model model
 			) {
+		if(user.getUserName().isEmpty() || user.getUserPassword().isEmpty() || user.getEmail().isEmpty()) {
+			return "redirect:/contact";
+		}
 		this.userService.createUser(user);
 		return "userDetails";
 		}
