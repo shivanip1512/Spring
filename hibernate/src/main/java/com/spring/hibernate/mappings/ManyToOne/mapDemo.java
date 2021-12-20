@@ -29,18 +29,22 @@ public class mapDemo {
 		 * answers.add(ans1);
 		 * 
 		 * q.setAns(answers); ans.setQuestion(q); ans1.setQuestion(q);
-		 */
-
-		/*
+		 * 
 		 * session.save(ans); session.save(ans1); session.save(q);
 		 */
-		
+
 		Question question = session.get(Question.class, 1);
+
+		System.out.println(question.getQuestionId());
+		System.out.println(question.getQuestion());
 		
-		System.out.println("Question :"+question);
-		for (Answer answer : question.getAns()) {
-			System.out.println(answer);
-		}
+		//lazy loading
+		System.out.println(question.getAns());
+
+//		System.out.println("Question :"+question);
+//		for (Answer answer : question.getAns()) {
+//			System.out.println(answer);
+//		}
 
 		transaction.commit();
 		session.close();
