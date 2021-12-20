@@ -21,17 +21,17 @@ public class App {
 
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory(); // //
 
-		Student s = new Student(1, "Shivani", "Pune");
+		Student s = new Student(2, "ABC", "XYZ");
 		Address addr = new Address();
-		addr.setStreet("street1");
-		addr.setCity("city1");
+		addr.setStreet("street2");
+		addr.setCity("city2");
 		addr.setOpen(true);
 		addr.setAddrDate(new Date());
 		addr.setAirQuality(1200.50);
 		//reading image
 		FileInputStream is = new FileInputStream("src/main/java/com/spring/hibernate/images/profile.png");
 		byte[] b = new byte[is.available()];
-		addr.setImage(b);
+//		addr.setImage(b);
 		
 		Session session = factory.openSession();
 
