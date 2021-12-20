@@ -13,7 +13,9 @@
 		<property name="show_sql">true</property>
 		<mapping class="com.spring.hibernate.Student" />
 		<mapping class="com.spring.hibernate.Address" />
-		<mapping class="com.spring.hibernate.mappings.Question" />
-		<mapping class="com.spring.hibernate.mappings.Answer" />
+		<mapping
+			class="com.spring.hibernate.mappings.ManyToOne.Question" />
+		<mapping
+			class="com.spring.hibernate.mappings.ManyToOne.Answer" />
 	</session-factory>
 </hibernate-configuration>
