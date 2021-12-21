@@ -1,5 +1,6 @@
 package com.spring.hibernate.HQL;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -49,7 +50,13 @@ public class HQLExample {
 		int update = uq.executeUpdate();
 		System.out.println(update+" rows updated.");
 		
+		//join entities
+		Query sq = session.createQuery("select q.question,a.answer from Question q inner join q.ans a");
+		List<Object[]> resultList = sq.getResultList();
 		
+		for (Object[] obj : resultList) {
+			System.out.println(Arrays.toString(obj));
+		}
 		
 		txn.commit();
 		session.close();
