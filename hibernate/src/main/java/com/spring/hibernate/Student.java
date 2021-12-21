@@ -1,18 +1,24 @@
 package com.spring.hibernate;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	private String name;
 	private String city;
-	
+
 	private Certificate certi;
 
 	public Certificate getCerti() {
