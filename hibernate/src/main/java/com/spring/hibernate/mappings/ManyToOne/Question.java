@@ -2,6 +2,7 @@ package com.spring.hibernate.mappings.ManyToOne;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class Question {
 	private int questionId;
 	private String question;
 
-	@OneToMany(mappedBy = "question")
+	@OneToMany(mappedBy = "question",cascade = CascadeType.ALL)
 	private List<Answer> ans;
 
 	public List<Answer> getAns() {

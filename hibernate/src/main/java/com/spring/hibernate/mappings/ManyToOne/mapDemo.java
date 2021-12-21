@@ -17,28 +17,35 @@ public class mapDemo {
 
 		Transaction transaction = session.beginTransaction();
 
-		/*
-		 * Question q = new Question(); q.setQuestion("how are you?");
-		 * 
-		 * Answer ans = new Answer(); ans.setAnswerId(1); ans.setAnswer("I am fine");
-		 * 
-		 * Answer ans1 = new Answer(); ans1.setAnswerId(2);
-		 * ans1.setAnswer("I am Good!");
-		 * 
-		 * List<Answer> answers = new ArrayList<Answer>(); answers.add(ans);
-		 * answers.add(ans1);
-		 * 
-		 * q.setAns(answers); ans.setQuestion(q); ans1.setQuestion(q);
-		 * 
-		 * session.save(ans); session.save(ans1); session.save(q);
-		 */
+		Question q = new Question();
+		q.setQuestion("how are you?");
+
+		Answer ans = new Answer();
+		ans.setAnswerId(5);
+		ans.setAnswer("I am fine");
+
+		Answer ans1 = new Answer();
+		ans1.setAnswerId(6);
+		ans1.setAnswer("I am Good!");
+
+		List<Answer> answers = new ArrayList<Answer>();
+		answers.add(ans);
+		answers.add(ans1);
+
+		q.setAns(answers);
+		ans.setQuestion(q);
+		ans1.setQuestion(q);
+
+		session.save(ans);
+		session.save(ans1);
+		session.save(q);
 
 		Question question = session.get(Question.class, 1);
 
 		System.out.println(question.getQuestionId());
 		System.out.println(question.getQuestion());
-		
-		//lazy loading
+
+		// lazy loading
 		System.out.println(question.getAns());
 
 //		System.out.println("Question :"+question);
