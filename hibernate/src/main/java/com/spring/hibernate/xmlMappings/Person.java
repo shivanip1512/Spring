@@ -1,6 +1,11 @@
 package com.spring.hibernate.xmlMappings;
 
 public class Person {
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + ", city=" + city + "]";
+	}
+
 	private int id;
 	private String name;
 	private String city;
